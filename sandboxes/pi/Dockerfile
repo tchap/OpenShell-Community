@@ -22,4 +22,9 @@ COPY policy.yaml /etc/openshell/policy.yaml
 
 USER sandbox
 
+# Install pi plugins
+RUN pi install npm:@twogiants/pi-anthropic-vertex
+RUN pi install npm:pi-powerline-footer
+RUN pi install npm:pi-subagents
+
 ENTRYPOINT ["/bin/bash"]

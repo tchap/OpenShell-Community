@@ -70,6 +70,14 @@ network_policies:
       - { host: gateway.ai.cloudflare.com, port: 443 }
       # Add region-specific Vertex AI hosts here if needed, e.g.:
       # - { host: us-central1-aiplatform.googleapis.com, port: 443 }
+      # This is the global region.
+      - { host: aiplatform.googleapis.com, port: 443 }
+      # Token refresh.
+      - host: "*.googleapis.com"
+        port: 443
+        protocol: rest
+        access: read-write
+        enforcement: enforce
       # Subscription login / token refresh endpoints
       - { host: claude.ai, port: 443 }
       - { host: platform.claude.com, port: 443 }
